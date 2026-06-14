@@ -1,0 +1,227 @@
+<!-- =====================
+         Simpan sbg lokasi.html
+    ====================== -->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lokasi Hombo Batu di Nias Selatan</title>
+
+<link rel="stylesheet" href="css.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div class="loader">
+<span></span>
+</div>
+
+<!-- NAVBAR -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+HOMBO BATU
+</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Beranda</a></li>
+<li><a href="tentang.html">Tentang</a></li>
+<li><a href="sejarah.html">Sejarah</a></li>
+<li><a href="galeri.html">Galeri</a></li>
+<li><a href="lokasi.html">Lokasi</a></li>
+
+</ul>
+
+<div class="nav-buttons">
+
+<button id="darkModeBtn" class="dark-btn">
+🌙
+</button>
+
+</div>
+
+</nav>
+
+</header>
+
+
+</section>
+
+<!-- PETA -->
+
+<section>
+
+<h2 class="section-title">
+Lokasi Hombo Batu di Nias Selatan
+</h2>
+
+<div id="map"></div>
+
+</section>
+
+<!-- INFORMASI LOKASI -->
+
+<section>
+
+<div class="card-container">
+
+<div class="card">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<h3>Alamat</h3>
+
+<p>
+
+Desa Bawömataluo,
+Kabupaten Nias Selatan,
+Sumatera Utara,
+Indonesia.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-clock"></i>
+
+<h3>Jam Kunjungan</h3>
+
+<p>
+
+Setiap hari
+08.00 – 17.00 WIB
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-phone"></i>
+
+<h3>Informasi Wisata</h3>
+
+<p>
+
+Hubungi Dinas Pariwisata
+atau pengelola desa wisata setempat.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+    <h3>Hombo Batu Nias</h3>
+
+    <div class="footer-links">
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="sejarah.html">Sejarah</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="lokasi.html">Lokasi</a>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-creator">
+
+        <span class="creator-label">
+            WEBSITE DIKEMBANGKAN OLEH
+        </span>
+
+        <div class="creator-card">
+
+            <div class="creator-icon">
+                🏛️
+            </div>
+
+            <h4>Kelompok 8</h4>
+
+            <p>XI-IPA Baluse</p>
+
+          <div class="ornament">
+<span></span>
+❖
+<span></span>
+</div>
+            <p>SMA Negeri 1 Telukdalam</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <p class="copyright">
+        © 2026 Website Informasi Tradisi Hombo Batu Nias
+    </p>
+
+</footer>
+<!-- BACK TO TOP -->
+
+<button id="topBtn"
+onclick="backToTop()">
+↑
+</button>
+
+<script src="js.js"></script>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+
+/* ======================
+   LEAFLET MAP
+====================== */
+
+var map =
+L.map('map')
+.setView([0.614513, 97.770496], 13);
+
+L.tileLayer(
+'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+{
+attribution:
+'© OpenStreetMap Contributors'
+}
+).addTo(map);
+
+L.marker(
+[0.614513, 97.770496]
+).addTo(map)
+
+.bindPopup(
+'<b>Monumen Hombo Batu</b><br>Desa Bawömataluo, Nias Selatan'
+)
+
+.openPopup();
+
+</script>
+
+</body>
+
+</html>

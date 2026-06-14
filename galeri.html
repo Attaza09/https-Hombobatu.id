@@ -1,0 +1,517 @@
+<!-- =====================
+         Simpan sbg galeri.html
+    ====================== -->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Galeri Hombo Batu | Monumen Hombo Batu Nias</title>
+
+<link rel="stylesheet" href="css.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* ==========================
+   PREMIUM GALLERY PAGE
+========================== */
+
+.gallery-hero{
+padding-top:140px;
+padding-bottom:80px;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.6),
+rgba(0,0,0,.6)),
+url("gallery-banner.jpg");
+
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.gallery-hero h1{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.gallery-hero p{
+max-width:800px;
+margin:auto;
+line-height:1.8;
+}
+
+/* Pinterest Masonry */
+
+.masonry-gallery{
+
+column-count:4;
+column-gap:18px;
+
+padding:20px 10%;
+}
+
+.gallery-item{
+
+position:relative;
+margin-bottom:18px;
+break-inside:avoid;
+overflow:hidden;
+border-radius:18px;
+cursor:pointer;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.gallery-item img{
+
+width:100%;
+display:block;
+
+transition:.5s;
+}
+
+.gallery-item:hover img{
+
+transform:scale(1.08);
+
+}
+
+.gallery-overlay{
+
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+
+padding:25px;
+
+background:
+linear-gradient(
+transparent,
+rgba(0,0,0,.85)
+);
+
+color:white;
+
+opacity:0;
+transition:.4s;
+
+}
+
+.gallery-item:hover .gallery-overlay{
+
+opacity:1;
+
+}
+
+.gallery-overlay h3{
+
+margin-bottom:5px;
+
+}
+
+/* Search */
+
+.gallery-search{
+
+padding:40px 10%;
+text-align:center;
+
+}
+
+.gallery-search input{
+
+width:100%;
+max-width:600px;
+
+padding:16px;
+
+border:none;
+outline:none;
+
+border-radius:12px;
+
+box-shadow:var(--shadow);
+
+}
+
+/* Lightbox */
+
+.lightbox{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+background:rgba(0,0,0,.95);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+
+}
+
+.lightbox img{
+
+max-width:90%;
+max-height:90%;
+
+border-radius:10px;
+
+}
+
+/* Responsive */
+
+@media(max-width:1100px){
+
+.masonry-gallery{
+column-count:3;
+}
+
+}
+
+@media(max-width:768px){
+
+.gallery-hero h1{
+font-size:2.5rem;
+}
+
+.masonry-gallery{
+column-count:2;
+padding:20px;
+}
+
+}
+
+@media(max-width:500px){
+
+.masonry-gallery{
+column-count:1;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div class="loader">
+<span></span>
+</div>
+
+<!-- NAVBAR -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+HOMBO BATU
+</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Beranda</a></li>
+<li><a href="tentang.html">Tentang</a></li>
+<li><a href="sejarah.html">Sejarah</a></li>
+<li><a href="galeri.html">Galeri</a></li>
+<li><a href="lokasi.html">Lokasi</a></li>
+
+</ul>
+
+<div class="nav-buttons">
+
+<button id="darkModeBtn"
+class="dark-btn">
+
+🌙
+
+</button>
+
+</div>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="gallery-hero">
+
+<h1>
+Galeri Hombo Batu
+</h1>
+
+<p>
+
+Kumpulan dokumentasi tradisi Hombo Batu
+yang memperlihatkan keberanian,
+ketangkasan,
+dan keindahan budaya masyarakat Nias.
+
+</p>
+
+</section>
+
+<!-- SEARCH -->
+
+<section class="gallery-search">
+
+<input
+type="text"
+id="searchInput"
+placeholder="🔍 Cari foto Hombo Batu..."
+onkeyup="searchContent()">
+
+</section>
+
+<!-- GALLERY -->
+
+<section
+class="masonry-gallery gallery">
+
+<div class="gallery-item search-item">
+
+<img
+src="gallery1.jpg"
+alt="Hombo Batu">
+
+<div class="gallery-overlay">
+
+<h3>Lompatan Tradisional</h3>
+
+<p>
+Atraksi Lompat Batu oleh pemuda Nias.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item search-item">
+
+<img
+src="gallery2.jpg"
+alt="Hombo Batu">
+
+<div class="gallery-overlay">
+
+<h3>Keberanian Pemuda</h3>
+
+<p>
+Tradisi simbol kedewasaan.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item search-item">
+
+<img
+src="gallery3.jpg"
+alt="Hombo Batu">
+
+<div class="gallery-overlay">
+
+<h3>Lompatan Tinggi</h3>
+
+<p>
+Melompati batu setinggi ±2 meter.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item search-item">
+
+<img
+src="gallery4.jpg"
+alt="Hombo Batu">
+
+<div class="gallery-overlay">
+
+<h3>Warisan Budaya</h3>
+
+<p>
+Dilestarikan hingga sekarang.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item search-item">
+
+<img
+src="gallery5.jpg"
+alt="Hombo Batu">
+
+<div class="gallery-overlay">
+
+<h3>Tradisi Nias</h3>
+
+<p>
+Salah satu ikon budaya Nias.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item search-item">
+
+<img
+src="gallery6.jpg"
+alt="Hombo Batu">
+
+<div class="gallery-overlay">
+
+<h3>Atraksi Budaya</h3>
+
+<p>
+Daya tarik wisata budaya.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item search-item">
+
+<img
+src="gallery7.jpg"
+alt="Hombo Batu">
+
+<div class="gallery-overlay">
+
+<h3>Teknik Lompat</h3>
+
+<p>
+Memerlukan latihan dan ketangkasan.
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item search-item">
+
+<img
+src="gallery8.jpg"
+alt="Hombo Batu">
+
+<div class="gallery-overlay">
+
+<h3>Ikon Nias</h3>
+
+<p>
+Budaya yang dikenal dunia.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LIGHTBOX -->
+
+<div
+class="lightbox"
+id="lightbox">
+
+<img
+id="lightbox-img"
+src=""
+alt="Preview">
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>Hombo Batu Nias</h3>
+
+    <div class="footer-links">
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="sejarah.html">Sejarah</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="lokasi.html">Lokasi</a>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-creator">
+
+        <span class="creator-label">
+            WEBSITE DIKEMBANGKAN OLEH
+        </span>
+
+        <div class="creator-card">
+
+            <div class="creator-icon">
+                🏛️
+            </div>
+
+            <h4>Kelompok 8</h4>
+
+            <p>XI-IPA Baluse</p>
+
+          <div class="ornament">
+<span></span>
+❖
+<span></span>
+</div>
+            <p>SMA Negeri 1 Telukdalam</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <p class="copyright">
+        © 2026 Website Informasi Tradisi Hombo Batu Nias
+    </p>
+
+</footer>
+
+<!-- BACK TO TOP -->
+
+<button
+id="topBtn"
+onclick="backToTop()">
+
+↑
+
+</button>
+
+<script src="js.js"></script>
+
+</body>
+
+</html>
